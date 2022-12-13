@@ -18,12 +18,13 @@ public class SplitableObject : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
-        if (move == true)
+        if(!PauseMenu.isPaused)
         {
-            transform.position = (transform.position + new Vector3(-0.001f, 0, 0));
+            if (move == true)
+            {
+                transform.position = (transform.position + new Vector3(-0.001f, 0, 0));
+            }
         }
-
         /*
         if (Input.GetMouseButtonDown(0) && !clicked)
         {
@@ -40,6 +41,7 @@ public class SplitableObject : MonoBehaviour
     
     void OnMouseDown()
     {
+        if(!PauseMenu.isPaused){
         if (!clicked)
         {
             clicked = true;
@@ -58,17 +60,19 @@ public class SplitableObject : MonoBehaviour
             }
             */
         }
+        }
     }
 
     public IEnumerator Wait()
     {
-        move = true;
-        yield return new WaitForSeconds(1f);
-        move = false;
-        GetComponent<BoxCollider2D>().offset = new Vector2(0, 0);
-        GetComponent<BoxCollider2D>().size = new Vector2(1, 1);
-        GetComponent<PickableScript>().enabled = true;
+        if(!PauseMenu.isPaused){
+            move = true;
+            yield return new WaitForSeconds(1f);
+            move = false;
+            GetComponent<BoxCollider2D>().offset = new Vector2(0, 0);
+            GetComponent<BoxCollider2D>().size = new Vector2(1, 1);
+            GetComponent<PickableScript>().enabled = true;
+        }
+        
     }
-
-
 }

@@ -19,10 +19,13 @@ public class PanggangScript : MonoBehaviour
 
     void Update()
     {
-        if(manggang == true)
-        {
-            rend.material.color = Color.Lerp(rend.material.color, myColor, lerpTime);
+        if(!PauseMenu.isPaused){
+            if(manggang == true)
+            {
+                rend.material.color = Color.Lerp(rend.material.color, myColor, lerpTime);
+            }
         }
+        
     }
 
     void OnTriggerEnter2D(Collider2D other)
