@@ -14,6 +14,7 @@ public class SplitObjectManager : MonoBehaviour
     public GameObject piece2_line;
     public GameObject piece3_line;
     public GameObject piece4_line;
+    public GameObject nextSceneButton;
 
 
     void Start()
@@ -27,6 +28,7 @@ public class SplitObjectManager : MonoBehaviour
         piece2_line.SetActive(false);
         piece3_line.SetActive(false);
         piece4_line.SetActive(false);
+        nextSceneButton.SetActive(false);
     }
 
     void Update()
@@ -49,6 +51,7 @@ public class SplitObjectManager : MonoBehaviour
         if(piece4.GetComponent<PickableScript>().enabled == true){
             piece5.GetComponent<BoxCollider2D>().enabled = true;
             piece4_line.SetActive(false);
+            nextSceneButton.SetActive(true);
         }   
     }
 }
