@@ -5,16 +5,17 @@ using UnityEngine.SceneManagement;
 
 public class dontDestroy_Sate : MonoBehaviour
 {
-
     Scene scene;
-    private void Awake() {
+    private void Update() {
         scene = SceneManager.GetActiveScene();
         if(scene.name == "2.Sate_Bakar_Scene"){
-            DontDestroyOnLoad(this.gameObject);
-        }else if(scene.name == "3.Sate_Plating_Scene"){
-            DontDestroyOnLoad(this.gameObject);
-        }else{
-            Destroy(this.gameObject);
+            DontDestroyOnLoad(gameObject);
+        }
+        else if(scene.name == "3.Sate_Plating_Scene"){
+            DontDestroyOnLoad(gameObject);
+        }
+        else{
+            Destroy(gameObject);
         }
     }
 }
