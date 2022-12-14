@@ -72,7 +72,6 @@ public class SplitableObject : MonoBehaviour
             GetComponent<BoxCollider2D>().offset = new Vector2(0, 0);
             GetComponent<BoxCollider2D>().size = new Vector2(1, 1);
             GetComponent<PickableScript>().enabled = true;
-        }
-        
+        } 
     }
 }
