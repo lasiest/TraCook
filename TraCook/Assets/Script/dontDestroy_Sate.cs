@@ -8,10 +8,10 @@ public class dontDestroy_Sate : MonoBehaviour
     Scene scene;
     private void Update() {
         scene = SceneManager.GetActiveScene();
-        if(scene.name == "2.Sate_Bakar_Scene"){
+        if(scene.name == "3.Sate_Bakar_Scene"){
             DontDestroyOnLoad(gameObject);
         }
-        else if(scene.name == "3.Sate_Plating_Scene"){
+        else if(scene.name == "4.Sate_Plating_Scene"){
             DontDestroyOnLoad(gameObject);
         }
         else{

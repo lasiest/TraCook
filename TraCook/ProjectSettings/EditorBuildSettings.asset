@@ -15,9 +15,12 @@ EditorBuildSettings:
     path: Assets/Scenes/Sate/1.Sate_Cut_Scene.unity
     guid: c2673a96ff0f65a48b8887b1739a918d
   - enabled: 1
-    path: Assets/Scenes/Sate/2.Sate_Bakar_Scene.unity
+    path: Assets/Scenes/Sate/2.Sate_Tusuk_Scene.unity
+    guid: 69cf26ddd5192bc48a495057a6e222d9
+  - enabled: 1
+    path: Assets/Scenes/Sate/3.Sate_Bakar_Scene.unity
     guid: 51e2f77c50934c648b9f51105a96b7dd
   - enabled: 1
-    path: Assets/Scenes/Sate/3.Sate_Plating_Scene.unity
+    path: Assets/Scenes/Sate/4.Sate_Plating_Scene.unity
     guid: 48cb7faf12f1901438c65aebb6e76be6
   m_configObjects: {}
