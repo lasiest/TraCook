@@ -2,11 +2,28 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.EventSystems;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class DragDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, IEndDragHandler, IDragHandler
 {
     private RectTransform rectTransorm;
     private CanvasGroup canvasGroup;
+
+    private Vector2 currentPosition;
+
+    public GameObject saos;
+
+    private bool inPlate = false;
+
+    void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.tag == "Piring")
+        {
+            Debug.Log("test");
+            inPlate = true;
+        }
+    }
+
     private void Awake()
     {
         rectTransorm = GetComponent<RectTransform>();
@@ -21,7 +38,7 @@ public class DragDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, I
 
     public void OnDrag(PointerEventData eventData)
     {
-        Debug.Log("OnDrag");
+        //Debug.Log("OnDrag");
         rectTransorm.anchoredPosition += eventData.delta;
     }
 
@@ -30,7 +47,15 @@ public class DragDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, I
         Debug.Log("EndDrag");
         canvasGroup.alpha = 1f;
         canvasGroup.blocksRaycasts = true;
+        transform.position = currentPosition;
+
+        if(inPlate == true)
+        {
+            saos.SetActive(true);
+        }
     }
+
+
 
     public void OnPointerDown(PointerEventData eventData)
     {
@@ -40,17 +65,12 @@ public class DragDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, I
     // Start is called before the first frame update
     void Start()
     {
-        
+        currentPosition = transform.position;
     }
 
     // Update is called once per frame
     void Update()
     {
-        
-    }
 
-    public void OnDrop(PointerEventData eventData)
-    {
-        throw new System.NotImplementedException();
     }
 }
