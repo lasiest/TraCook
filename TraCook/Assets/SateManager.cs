@@ -6,6 +6,7 @@ public class SateManager : MonoBehaviour
 {
 
     public bool move;
+    public bool tertusuk;
     public float waktu_tusukan;
     public TitikTajamTusukan titikTajamTusukan;
 
@@ -18,6 +19,7 @@ public class SateManager : MonoBehaviour
     }
 
     void awake(){
+        tertusuk = false;
         GetComponent<PickableScript>().enabled = true;
         titikTajamTusukan = GetComponent<TitikTajamTusukan>();
         move = false;
@@ -36,6 +38,7 @@ public class SateManager : MonoBehaviour
     {
         move = true;
         yield return new WaitForSeconds(n);
+        tertusuk = true;
         move = false;
     }
 

@@ -1,13 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.EventSystems;
 
-public class ItemSlot : MonoBehaviour 
+public class SaosManager : MonoBehaviour
 {
-    public GameObject objek;
-    private DragDrop itemPosition;
-    
+    private GameObject saosKacang;
+    private GameObject kecap;
 
     // Start is called before the first frame update
     void Start()
